@@ -102,9 +102,8 @@
   ;; 5. Collect merged elements.
   (reduce
     (fn[col elem1]
-      (let [res (filter #(= (get % column2) (get elem1 column1)) data2)
-      ]
-      (conj col (merge (first res) elem1))))
+      (let [elem2 (filter #(= (get % column2) (get elem1 column1)) data2)]
+      (conj col (merge (first elem2) elem1))))
     []
     data1 ))
 
