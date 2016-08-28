@@ -7,6 +7,7 @@
   ;;       (task02.query/perform-query) и возвращать результат в виде строки в формате EDN.
 
   ;; Hint: load-initial-data, pr-str, perform-query
-  ; :implement-me
   )
 
+  (defn -InitDatabase [] (task02.db/load-initial-data))
+  (defn -Select [^String query] (pr-str (task02.query/perform-query query)))
